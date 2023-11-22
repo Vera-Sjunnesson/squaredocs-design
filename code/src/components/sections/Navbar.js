@@ -6,14 +6,14 @@ import Searchbar from '../lib/Searchbar';
 
 const Navbar = () => {
   return (
-    <div className="w-full h-10 flex justify-between items-center absolute top-0 left-0 p-6 rounded-2xl shadow-3xl">
+    <div className="w-full h-12 flex justify-between items-center px-4 rounded-2xl shadow-3xl z-40">
       <h3 className="text-black font-bold">
         SquareDocs
       </h3>
       <Searchbar />
       <div className="flex items-center  gap-4">
         <SunIcon className="h-5 w-5 text-dark-grey" />
-        <button className="text-white bg-primary-blue px-4 py-2 rounded-lg">
+        <button className="text-xs font-bold text-primary-white bg-primary-blue px-2.5 py-1.5 rounded-lg">
           Get Template
         </button>
       </div>

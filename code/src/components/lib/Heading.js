@@ -3,7 +3,7 @@ import React from 'react';
 const Heading = () => {
   return (
     <div className="flex flex-col items-center gap-3">
-      <span className="rounded-4xl bg-light-grey pl-1 pr-4 py-1 inline-block">
+      <span className="bg-primary-white rounded-4xl pl-1 pr-4 py-1 inline-block shadow-3xl">
         <p className="text-xs text-primary-black">
           <span className="rounded-4xl px-2 py-0.5 bg-gradient-to-t from-bright-purple to-primary-blue text-primary-white mr-2">
             New
