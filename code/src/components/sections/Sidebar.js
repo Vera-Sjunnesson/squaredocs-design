@@ -43,7 +43,7 @@ const Sidebar = () => {
         return (
         <ul key={item.id}>
           <li className="text-xs font-bold text-black flex items-center gap-x-3 mb-2">
-            <Icon className="h-5 w-5 text-dark-grey"/>
+            <Icon className="h-4 w-4 text-dark-grey"/>
             {item.title}
           </li>
           <ul className="ml-8">

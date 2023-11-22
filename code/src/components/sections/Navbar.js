@@ -7,7 +7,9 @@ import Searchbar from '../lib/Searchbar';
 const Navbar = () => {
   return (
     <div className="w-full h-10 flex justify-between items-center absolute top-0 left-0 p-8 rounded-2xl shadow-3xl">
-      <h3 className="font-bold">SquareDocs</h3>
+      <h3 className="text-black font-bold">
+        SquareDocs
+      </h3>
       <Searchbar />
       <div className="flex items-center  gap-4">
         <SunIcon className="h-5 w-5 text-dark-grey" />
