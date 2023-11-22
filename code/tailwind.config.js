@@ -20,8 +20,13 @@ module.exports = {
       borderRadius: {
         "4xl": "1.5rem",
         "2xl": "1.5rem 1.5rem 0rem 0rem",
-      }
+      },
+  
+    fontSize: {
+      xs: ".8rem",
+      xxs: ".5rem",
     }
+    },
   },
   plugins: [],
 }
