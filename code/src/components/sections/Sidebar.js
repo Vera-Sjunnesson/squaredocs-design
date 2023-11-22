@@ -37,7 +37,7 @@ const MainLinks = {
 
 const Sidebar = () => {
   return (
-    <nav className="absolute top-20 left-0">
+    <nav className="absolute top-20 left-0 p-6">
       {MainLinks.items.map((item) => {
         const Icon = item.icon;
         return (

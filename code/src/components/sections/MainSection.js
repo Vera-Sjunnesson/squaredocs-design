@@ -1,12 +1,14 @@
 import React from 'react';
-import Guides from '../lib/Guides';
+import GuideButtons from '../lib/GuideButtons';
 import Heading from '../lib/Heading';
+import InfoBlock from '../lib/InfoBlock';
 
 const MainSection = () => {
   return (
-    <section className="absolute top-20 right-0 w-3/4 flex flex-col items-center px-20">
+    <section className="absolute top-20 right-0 w-3/4 flex flex-col items-center justify-center pt-10 px-20 gap-20">
       <Heading />
-      <Guides />
+      <GuideButtons />
+      <InfoBlock />
     </section>
   );
 }

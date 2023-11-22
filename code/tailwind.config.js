@@ -24,7 +24,7 @@ module.exports = {
       },
       fontSize: {
         l: "2.5rem",
-        s: "1rem",
+        s: ".9rem",
         xs: ".8rem",
         xxs: ".5rem",
       },

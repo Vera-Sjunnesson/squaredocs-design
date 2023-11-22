@@ -32,14 +32,14 @@ const ButtonItems = {
   ]
 };
 
-const Guides = () => {
+const GuideButtons = () => {
   return (
     <section className="w-full grid grid-cols-2 grid-rows-2 gap-4">
       {ButtonItems.items.map((item) => {
         const Icon = item.icon;
         return (
         <button key={item.id} className=" w-full bg-light-grey col-span-1 rounded-lg p-5 flex items-center justify-between text-xs font-bold text-black">
-          <span className="flex items center gap-5">
+          <span className="flex items-center gap-5">
             <Icon className="h-4 w-4 text-dark-grey"/>
             {item.title}
             </span>
@@ -50,4 +50,4 @@ const Guides = () => {
   );
 };
 
-export default Guides;
+export default GuideButtons;
