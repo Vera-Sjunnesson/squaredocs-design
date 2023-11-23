@@ -7,11 +7,15 @@ import {
 import Searchbar from '../lib/Searchbar';
 
 const Navbar = () => {
-  const { user } = useAuthStore();
+  const { user, logout } = useAuthStore();
   const { showPopup } = usePopupStore();
 
-  const handleShowPopup = () => {
+  const handleAction = () => {
+    if (user) {
+      logout();
+    } else {
     showPopup();
+  }
   };
 
   return (
@@ -23,7 +27,7 @@ const Navbar = () => {
       <div className="flex items-center  gap-4">
         <SunIcon className="h-5 w-5 text-dark-grey" />
         <button
-          onClick={handleShowPopup}
+          onClick={handleAction}
           className="text-xs font-bold text-primary-white bg-primary-blue px-2.5 py-1.5 rounded-lg">
           {user ? 'Log Out' : "Log In"}
         </button>

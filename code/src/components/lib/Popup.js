@@ -11,6 +11,7 @@ const Popup = () => {
 
   const handleLogin = async () => {
     await login(email);
+    hidePopup();
   };
 
   const handleHidePopup = () => {
