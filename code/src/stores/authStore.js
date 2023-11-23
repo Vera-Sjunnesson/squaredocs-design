@@ -4,6 +4,7 @@ const useAuthStore = create((set) => ({
   user: null,
   login: async (email) => {
     try {
+      console.log('email', email)
       const auth_url = process.env.REACT_APP_LOGIN_URL
       const response = await fetch(auth_url, {
         method: 'POST',
@@ -12,6 +13,7 @@ const useAuthStore = create((set) => ({
         },
         body: JSON.stringify({ email })
       });
+      console.log('auth_url', auth_url)
 
       if (response.ok) {
         const userData = await response.json();

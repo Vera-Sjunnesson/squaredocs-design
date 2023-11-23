@@ -9,7 +9,8 @@ const Popup = () => {
 
   const [email, setEmail] = useState('');
 
-  const handleLogin = async () => {
+  const handleLogin = async (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
     await login(email);
     hidePopup();
   };
@@ -18,6 +19,7 @@ const Popup = () => {
     hidePopup();
   };
 
+  console.log('user',email)
   return (
     <>
       {popup
@@ -35,7 +37,7 @@ const Popup = () => {
               className="text-xs h-8 bg-light-grey rounded-lg left-12 focus:outline-none w-full px-2 max-w-sm" />
             </label>
           <span className="w-full flex flex-col items-center gap-3">
-            <button className="text-xs font-bold text-primary-white bg-primary-blue px-2.5 py-1.5 rounded-lg w-3/6" onClick={handleLogin}>Log In</button>
+            <button className="text-xs font-bold text-primary-white bg-primary-blue px-2.5 py-1.5 rounded-lg w-3/6" onClick={(e) => handleLogin(e)}>Log In</button>
             <button className="text-xs font-bold text-primary-white bg-primary-blue px-2.5 py-1.5 rounded-lg w-3/6" onClick={handleHidePopup}>Cancel</button>
           </span>
         </form>
