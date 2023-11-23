@@ -22,16 +22,23 @@ const Popup = () => {
     <>
       {popup
       && (
-        <div className="absolute bg-primary-white flex flex-col justify-center items-center m-auto w-6/12 h-3/5 rounded-4xl shadow-3xl gap-10">
-          <input
-            type="text"
-            placeholder="Username"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="h-8 bg-light-grey rounded-lg left-12 focus:outline-none w-2/6 px-2 max-w-sm" />
-          <button className="text-xs font-bold text-primary-white bg-primary-blue px-2.5 py-1.5 rounded-lg w-1/6" onClick={handleLogin}>Log In</button>
-          <button className="text-xs font-bold text-primary-white bg-primary-blue px-2.5 py-1.5 rounded-lg w-1/6" onClick={handleHidePopup}>Cancel</button>
-        </div>
+        <form className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary-white flex flex-col justify-start items-center m-auto w-4/12 h-2/5 rounded-4xl shadow-3xl z-30 gap-5 p-5">
+          <h2 className="text-primary-black text-m font-bold">Log in</h2>
+          <label htmlFor="email" className="w-4/6 text-xxs text-primary-black mb-1 flex flex-col gap-1">
+            Log in with your e-mail:
+            <input
+              type="text"
+              id="email"
+              placeholder="E-mail..."
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="text-xs h-8 bg-light-grey rounded-lg left-12 focus:outline-none w-full px-2 max-w-sm" />
+            </label>
+          <span className="w-full flex flex-col items-center gap-3">
+            <button className="text-xs font-bold text-primary-white bg-primary-blue px-2.5 py-1.5 rounded-lg w-3/6" onClick={handleLogin}>Log In</button>
+            <button className="text-xs font-bold text-primary-white bg-primary-blue px-2.5 py-1.5 rounded-lg w-3/6" onClick={handleHidePopup}>Cancel</button>
+          </span>
+        </form>
       )}
     </>
   );

@@ -6,6 +6,7 @@ import {
 } from "@heroicons/react/20/solid";
 import Searchbar from '../lib/Searchbar';
 
+
 const Navbar = () => {
   const { user, logout } = useAuthStore();
   const { showPopup } = usePopupStore();
@@ -19,10 +20,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full h-10 flex justify-between items-center px-4 rounded-2xl shadow-3xl z-40">
-      <h3 className="text-black font-bold">
-        SquareDocs
-      </h3>
+    <div className="w-full h-10 flex justify-between items-center px-4 rounded-2xl shadow-3xl z-30">
+      <span className="flex items-center gap-2">
+        <img
+          src={`${process.env.PUBLIC_URL}/squaredocs-logo.png`}
+          alt="squaredocs logo"
+          className="h-4 w-4" />
+        <h3 className="text-primary-black">
+          SquareDocs
+        </h3>
+      </span>
       <Searchbar />
       <div className="flex items-center  gap-4">
         <SunIcon className="h-5 w-5 text-dark-grey" />

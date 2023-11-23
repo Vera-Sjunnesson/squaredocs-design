@@ -38,7 +38,7 @@ const InfoItems = {
 const InfoBlock = () => {
   return (
     <section className="flex flex-col">
-      <h2 className="text-m-primary-color font-bold mb-10">Why SquareDocs?</h2>
+      <h2 className="text-primary-black text-m font-bold mb-10">Why SquareDocs?</h2>
       <div className="w-full grid grid-cols-2 grid-rows-2 gap-4">
         {InfoItems.items.map((item) => {
           const Icon = item.icon;

@@ -5,8 +5,8 @@ import Sidebar from "./components/sections/Sidebar";
 
 const App = () => {
   return (
-    <main className="h-screen w-screen bg-gradient-to-r from-lighter-purple to-darker-purple flex justify-center items-center relative">
-      <div className="bg-primary-white flex flex-col m-auto w-8/12 h-4/5 rounded-4xl shadow-4xl">
+    <main className="h-screen w-screen bg-background-gradient flex justify-center items-center">
+      <div className="bg-primary-white flex flex-col m-auto w-8/12 h-4/5 rounded-4xl shadow-4xl relative">
         <Navbar />
         <div className="flex items-center justify-start h-full overflow-auto md:overflow-scroll">
           <Sidebar />
@@ -15,8 +15,8 @@ const App = () => {
             <MainSection />
           </div>
         </div>
+        <Popup />
       </div>
-      <Popup />
     </main>
   );
 }

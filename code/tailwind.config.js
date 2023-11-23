@@ -30,10 +30,10 @@ module.exports = {
       },
       fontSize: {
         l: "2.5rem",
-        m: "1.9",
+        m: "1.5rem",
         s: ".9rem",
         xs: ".8rem",
-        xxs: ".5rem",
+        xxs: ".7rem",
       },
       fontWeight: {
         thin: '100',

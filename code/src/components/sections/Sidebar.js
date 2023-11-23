@@ -41,25 +41,27 @@ const MainLinks = {
 const Sidebar = () => {
   const { user } = useAuthStore();
   return (
-    <nav className="p-4 w-1/4 h-full border-r">
-      {MainLinks.items.map((item) => {
-        const Icon = item.icon;
-        return (
-        <ul key={item.id}>
-          <li className="text-xs font-bold text-black flex items-center gap-x-3 mb-2">
-            <Icon className="h-4 w-4 text-dark-grey"/>
-            {item.title}
-          </li>
-          <ul className="ml-7">
-            {item.sublinks.map((sublink, index) => (
-              <li className="text-xs text-dark-grey mb-2" key={index}>{sublink}</li>
-            ))}
+    <nav className="p-4 w-1/4 h-full border-r flex flex-col justify-between">
+      <div>
+        {MainLinks.items.map((item) => {
+          const Icon = item.icon;
+          return (
+          <ul key={item.id}>
+            <li className="text-xs font-bold text-black flex items-center gap-x-3 mb-2">
+              <Icon className="h-4 w-4 text-dark-grey"/>
+              {item.title}
+            </li>
+            <ul className="ml-7">
+              {item.sublinks.map((sublink, index) => (
+                <li className="text-xs text-dark-grey mb-2" key={index}>{sublink}</li>
+              ))}
+            </ul>
           </ul>
-        </ul>
-        )})}
+          )})}
+        </div>
         {user
           && (
-          <ul className="my-20">
+          <ul>
             <li className="text-xs font-bold text-black flex items-center gap-x-3 mb-2">
               <UserCircleIcon className="h-4 w-4 text-dark-grey"/>
               {user.first_name}
