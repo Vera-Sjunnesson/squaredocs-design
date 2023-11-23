@@ -7,9 +7,12 @@ const App = () => {
     <main className="h-screen w-screen bg-gradient-to-r from-lighter-purple to-darker-purple flex justify-center items-center">
       <div className="bg-primary-white flex flex-col m-auto w-8/12 h-4/5 rounded-4xl shadow-4xl">
         <Navbar />
-        <div className="flex items-center justify-start grow">
+        <div className="flex items-center justify-start h-full overflow-auto md:overflow-scroll">
           <Sidebar />
-          <MainSection />
+          <div className="bg-pink-gradient flex flex-col items-center justify-start h-full rounded-1xl overflow-auto md:overflow-scroll">
+            <MainSection />
+            <MainSection />
+          </div>
         </div>
       </div>
     </main>

@@ -14,10 +14,14 @@ module.exports = {
         "primary-white": "#ffffff",
         "primary-black": "#1d1e20",
         "light-grey": "#f0f1f5",
-        "dark-grey": "#62646a"
+        "dark-grey": "#878991"
       },
       boxShadow: {
         "3xl": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)"
+      },
+      backgroundImage: {
+        "background-gradient": "linear-gradient(120deg, rgba(167,161,224,1) 0%, rgba(130,133,235,1) 61%, rgba(142,149,230,1) 100%)",
+        "pink-gradient": "linear-gradient(220deg, #F8DFFE 11.64%, #FFF 42.2%, #FFF 87.41%)",
       },
       borderRadius: {
         "4xl": "1rem",
@@ -26,6 +30,7 @@ module.exports = {
       },
       fontSize: {
         l: "2.5rem",
+        m: "1.9",
         s: ".9rem",
         xs: ".8rem",
         xxs: ".5rem",

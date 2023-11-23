@@ -37,18 +37,21 @@ const InfoItems = {
 
 const InfoBlock = () => {
   return (
-    <section className="w-full grid grid-cols-2 grid-rows-2 gap-4">
-      {InfoItems.items.map((item) => {
-        const Icon = item.icon;
-        return (
-        <div key={item.id} className="w-full col-span-1 flex flex-col text-xs text-primary-black">
-          <span className="flex items-center font-bold gap-x-4">
-            <Icon className="h-4 w-4 text-primary-blue"/>
-            {item.title}
-          </span>
-          <p className="text-dark-grey ml-8">{item.text}</p>
-        </div>
-        )})}
+    <section className="flex flex-col">
+      <h2 className="text-m-primary-color font-bold mb-10">Why SquareDocs?</h2>
+      <div className="w-full grid grid-cols-2 grid-rows-2 gap-4">
+        {InfoItems.items.map((item) => {
+          const Icon = item.icon;
+          return (
+          <div key={item.id} className="w-full col-span-1 flex flex-col text-xs text-primary-black">
+            <span className="flex items-center font-bold gap-x-4">
+              <Icon className="h-4 w-4 text-primary-blue"/>
+              {item.title}
+            </span>
+            <p className="text-dark-grey ml-8">{item.text}</p>
+          </div>
+          )})}
+      </div>
     </section>
   );
 };

@@ -46,7 +46,7 @@ const Sidebar = () => {
             <Icon className="h-4 w-4 text-dark-grey"/>
             {item.title}
           </li>
-          <ul className="ml-8">
+          <ul className="ml-7">
             {item.sublinks.map((sublink, index) => (
               <li className="text-xs text-dark-grey mb-2" key={index}>{sublink}</li>
             ))}
