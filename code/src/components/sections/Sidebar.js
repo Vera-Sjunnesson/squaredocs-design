@@ -1,9 +1,12 @@
 import React from 'react';
+import useAuthStore from '../../stores/authStore';
 import {
   HomeIcon,
   BoltIcon,
   CodeBracketIcon,
-  QuestionMarkCircleIcon
+  QuestionMarkCircleIcon,
+  UserCircleIcon,
+  EnvelopeIcon
 } from "@heroicons/react/24/outline";
 
 const MainLinks = {
@@ -36,6 +39,7 @@ const MainLinks = {
 };
 
 const Sidebar = () => {
+  const { user } = useAuthStore();
   return (
     <nav className="p-4 w-1/4 h-full border-r">
       {MainLinks.items.map((item) => {
@@ -53,6 +57,19 @@ const Sidebar = () => {
           </ul>
         </ul>
         )})}
+        {user
+          && (
+          <ul className="my-20">
+            <li className="text-xs font-bold text-black flex items-center gap-x-3 mb-2">
+              <UserCircleIcon className="h-4 w-4 text-dark-grey"/>
+              {user.first_name}
+            </li>
+            <li className="text-xs font-bold text-black flex items-center gap-x-3 mb-2">
+              <EnvelopeIcon className="h-4 w-4 text-dark-grey"/>
+              {user.email}
+            </li>
+          </ul>
+        )}
     </nav>
   );
 };

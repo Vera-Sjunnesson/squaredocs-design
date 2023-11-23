@@ -4,7 +4,8 @@ const useAuthStore = create((set) => ({
   user: null,
   login: async (email) => {
     try {
-      const response = await fetch('https://blue.wudpecker.io/profile/mock-signin/', {
+      const auth_url = process.env.REACT_APP_LOGIN_URL
+      const response = await fetch(auth_url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
