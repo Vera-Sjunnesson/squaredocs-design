@@ -21,8 +21,9 @@ const Popup = () => {
   // On submission with email, the user is logged in and user data can be retrieved from the store, the popup hides and email is set to its initial state
   const handleLogin = async () => {
     await login(email);
-    hidePopup();
+    reset();
     setEmail('');
+    hidePopup();
   };
   // On cancel click the popup hides and the error resets
   const handleHidePopup = () => {
