@@ -6,7 +6,7 @@ This project is a recreation of a specific, chosen design using Tailwind CSS, fo
 
 ## The process
 
-1. I chose Zustand over Redux because I want to to learn about its advantages. I started off by researching how to use it effectively
+1. I chose Zustand over Redux because I want to to learn about its advantages and syntax. I started off by researching it.
 2. Set up React App and planned a basic structure, thinking of what functionality and styling each component should have
 3. Focused on building and styling the fundamental parts and played around with different features in Tailwind CSS to decide on suitable themes
 4. Utilized nested maps within the Sidebar component to display the hierarchical menu lists to more easily style them
