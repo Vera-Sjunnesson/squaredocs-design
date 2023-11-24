@@ -66,7 +66,7 @@ const Sidebar = () => {
       </div>
         {user // If there is a user in the store, the user's name, email and avatar and more will show
           && (
-            <div className="flex flex-col items-center gap-3 text-xxs font-medium text-dark-grey">
+            <div className="flex flex-col items-center gap-3 text-xxs font-medium text-dark-grey pb-2">
               <img src={user.picture} alt="User avatar" className="w-12 h-12 object-cover rounded-full" />
               <span className="flex flex-col items-center gap-1">
                 <p className="text-xs font-semibold text-primary-blue">{user.first_name}&nbsp;{user.last_name}</p>

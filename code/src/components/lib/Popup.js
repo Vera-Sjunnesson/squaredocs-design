@@ -66,7 +66,7 @@ const Popup = () => {
                   })} 
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
-                  className="w-full h-8 max-w-sm text-xs bg-light-grey px-2 rounded-lg text-xxs text-dark-grey font-semibold focus:outline-none" />
+                  className="w-full h-10 max-w-sm text-xs bg-light-grey px-2 rounded-lg text-xxs text-dark-grey font-semibold focus:outline-none" />
                   {errors.email
                     && 
                     <span className="text-red-500 font-medium">
@@ -77,11 +77,13 @@ const Popup = () => {
                 <BlueButton
                   type="submit"
                   text="Log in"
-                  width="w-5/6" />
+                  width="w-5/6"
+                  height="h-10" />
                 <BlueButton
                   type="button"
                   text="Cancel"
                   width="w-5/6"
+                  height="h-10"
                   onButtonClick={handleHidePopup} />
               </span>
             </form>
