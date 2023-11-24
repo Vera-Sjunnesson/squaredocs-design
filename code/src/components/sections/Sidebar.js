@@ -4,9 +4,7 @@ import {
   HomeIcon,
   BoltIcon,
   CodeBracketIcon,
-  QuestionMarkCircleIcon,
-  UserCircleIcon,
-  EnvelopeIcon
+  QuestionMarkCircleIcon
 } from "@heroicons/react/24/outline";
 
 const MainLinks = {
@@ -66,18 +64,19 @@ const Sidebar = () => {
             </ul>
           )})}
       </div>
-        {user // If there is a user in the store, the user's name and email will show
+        {user // If there is a user in the store, the user's name, email and avatar and more will show
           && (
-            <ul>
-              <li className="flex items-center gap-x-3 text-xs font-semibold text-primary-black mb-2">
-                <UserCircleIcon className="h-4 w-4 text-dark-grey"/>
-                {user.first_name}
-              </li>
-              <li className="flex items-center gap-x-3 text-xs font-semibold text-primary-black mb-2">
-                <EnvelopeIcon className="h-4 w-4 text-dark-grey"/>
-                {user.email}
-              </li>
-            </ul>
+            <div className="flex flex-col items-center gap-3 text-xxs font-medium text-dark-grey">
+              <img src={user.picture} alt="User avatar" className="w-12 h-12 object-cover rounded-full" />
+              <span className="flex flex-col items-center gap-1">
+                <p className="text-xs font-semibold text-primary-blue">{user.first_name}&nbsp;{user.last_name}</p>
+                <p>{user.email}</p>
+              </span>
+              <span className="flex flex-col items-center gap-1">
+                <p>{user.user_plan}&nbsp;member</p>
+                <p>{user.used_this_month}&nbsp;{user.used_this_month === 1 ? "call" : "calls"} this month</p>
+              </span>
+            </div>
         )}
     </nav>
   );
