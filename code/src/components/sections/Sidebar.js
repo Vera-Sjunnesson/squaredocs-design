@@ -40,8 +40,8 @@ const Sidebar = () => {
   const { user } = useAuthStore();
   
   return (
-    <nav className="min-w-max h-full flex flex-col justify-between p-4 border-r sm:w-full sm:h-auto sm:border-r-0 sm:border-t">
-      <div className="sm:grid grid-cols-2 grid-rows-2">
+    <nav className="min-w-max h-full flex flex-col justify-between p-4 border-r sm:w-full sm:h-auto sm:border-r-0 sm:border-t sm:p-6">
+      <div className={`${user ? 'sm:hidden' : 'sm:grid grid-cols-2 grid-rows-2'}`}>
         {MainLinks.items.map((item) => {
           const Icon = item.icon;
           return (
