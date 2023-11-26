@@ -20,12 +20,10 @@ This project is a recreation of a specific, chosen design using Tailwind CSS, fo
 12. Installed React Hook Form to validate the user email input in the popup form 
 13. Worked with validation in the email input login form (based on required and type) and created error messages
 14. Explored media queries within Tailwind CSS\
-\
-If I had more time I would present the response error message from the API for the user is not registered and add the following code to the authStore.js:
+
+If I had more time I would present the response error message from the API if the user is not registered/found and add the following code to the authStore.js:
 
 ```
-import { create } from 'zustand';
-
 const useAuthStore = create((set) => ({
   // The initial state of the store with the 'user' and 'errorMessage' properties set to null
   user: null,
@@ -64,8 +62,6 @@ const useAuthStore = create((set) => ({
     localStorage.removeItem('user');
   }
 }));
-
-export default useAuthStore;
 ```
 And I would adjust the Popup.js component as follows:
 ```
