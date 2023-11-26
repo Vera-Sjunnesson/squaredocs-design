@@ -137,6 +137,7 @@ And I would adjust the Popup.js component as follows:
                       </span>}
               </label> ...
 ``` 
+<img width="403" alt="Skärmavbild 2023-11-26 kl  18 33 13" src="/code/public/readme-demo.png">
 
 ## Technologies, dependencies and tools used
 
