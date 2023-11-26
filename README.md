@@ -19,8 +19,128 @@ This project is a recreation of a specific, chosen design using Tailwind CSS, fo
 11. Detected bugs, redesigned the logo in Figma and made hover states for buttons and links
 12. Installed React Hook Form to validate the user email input in the popup form 
 13. Worked with validation in the email input login form (based on required and type) and created error messages
-14. Explored media queries within Tailwind CSS
+14. Explored media queries within Tailwind CSS\
+\
+If I had more time I would present the response error message from the API for the user is not registered and add the following code to the authStore.js:
 
+```
+import { create } from 'zustand';
+
+const useAuthStore = create((set) => ({
+  // The initial state of the store with the 'user' and 'errorMessage' properties set to null
+  user: null,
+  errorMessage: null,
+  // Async function to handle user login
+  login: async (email) => {
+    set({ errorMessage: null });
+    try {
+      const auth_url = process.env.REACT_APP_LOGIN_URL
+      const response = await fetch(auth_url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email })
+      });
+      if (response.ok) {
+        const userData = await response.json();
+        set({ user: userData });
+        localStorage.setItem('user', JSON.stringify(userData));
+      } else {
+        const errorData = await response.json(); 
+        throw new Error(errorData.error || 'Login failed'); // Get rrror message from json.response
+      }
+    } catch (error) {
+      set({ errorMessage: '* ' + error.message }); // Set the errorMessage property in store to json.response error message
+      console.error('Login error:', error);
+    }
+  },
+  resetErrorMessage: () => { // Reset the errorMessage property in store to null
+    set({ errorMessage: null });
+    localStorage.removeItem('errorMessage');
+  },
+  logout: () => {
+    set({ user: null, errorMessage: null });
+    localStorage.removeItem('user');
+  }
+}));
+
+export default useAuthStore;
+```
+And I would adjust the Popup.js component as follows:
+```
+  // On submission with a valid email, the user is logged in and user data can be retrieved from the store
+  const handleLogin = async () => {
+    resetErrorMessage();
+    await login(email);
+    reset();
+    setEmail('');
+  };
+
+  // If there is a user present in the store popup hides
+  useEffect(() => {
+    if (user) {
+      hidePopup();
+    }
+  }, [hidePopup, user]);
+  
+  // On cancel click the popup hides and the errors resets
+  const handleHidePopup = () => {
+    hidePopup();
+    reset();
+    resetErrorMessage();
+    setEmail('');
+  };
+
+  return (
+    <>
+      {popup
+        && (
+          <div className="w-5/12 h-4/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary-white flex flex-col justify-start items-center gap-10 m-auto rounded-4xl shadow-3xl z-30 p-5 sm:w-10/12 lg:w-8/12">
+            <button
+              type="button"
+              onClick={handleHidePopup}
+              className="h-4 w-4 text-dark-grey self-end cursor-pointer hover:text-primary-black">
+              <XMarkIcon />
+            </button>
+            <h2 className="text-m text-primary-black font-bold">
+              Log in
+            </h2>
+            <form
+              className="w-3/4 h-full flex flex-col justify-start items-center gap-3 group"
+              onSubmit={handleSubmit(handleLogin)}
+              noValidate>
+              <label
+                htmlFor="email"
+                className="w-5/6 h-20 flex flex-col gap-1 text-xxs text-primary-black font-semibold mb-1">
+                E-mail:
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Type your e-mail..."
+                  {...register('email', { 
+                    required: "* Please enter your email",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "* Please enter a valid email"
+                    },
+                  })} 
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  className="w-full h-10 max-w-sm text-xs bg-light-grey px-3 rounded-lg text-xxs text-dark-grey font-semibold focus:outline-none" />
+                  {errors.email
+                    && 
+                      <span className="text-red-500 font-medium">
+                        {errors.email.message}
+                      </span>}
+                  {errorMessage && !errors.email
+                    && 
+                      <span className="text-red-500 font-medium">
+                        {errorMessage} {/* Show errorMessage from API / store */}
+                      </span>}
+              </label> ...
+``` 
 
 ## Technologies, dependencies and tools used
 
