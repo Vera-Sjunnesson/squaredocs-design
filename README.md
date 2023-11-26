@@ -23,14 +23,14 @@ This project is a recreation of a specific, chosen design using Tailwind CSS, fo
 
 If I had more time I would present the response error message from the API if the user is not registered/found and add the following code to the authStore.js:
 
-```
+```javascript
 const useAuthStore = create((set) => ({
   // The initial state of the store with the 'user' and 'errorMessage' properties set to null
   user: null,
   errorMessage: null,
+
   // Async function to handle user login
   login: async (email) => {
-    set({ errorMessage: null });
     try {
       const auth_url = process.env.REACT_APP_LOGIN_URL
       const response = await fetch(auth_url, {
@@ -45,15 +45,18 @@ const useAuthStore = create((set) => ({
         set({ user: userData });
         localStorage.setItem('user', JSON.stringify(userData));
       } else {
-        const errorData = await response.json(); 
-        throw new Error(errorData.error || 'Login failed'); // get error message from json.response
+        const errorData = await response.json();
+        // Get error message from json.response
+        throw new Error(errorData.error || 'Login failed');
       }
     } catch (error) {
-      set({ errorMessage: '* ' + error.message }); // Set the errorMessage property in store to json.response error message
+      // Set the errorMessage property in store to json.response error message
+      set({ errorMessage: '* ' + error.message });
       console.error('Login error:', error);
     }
   },
-  resetErrorMessage: () => { // Reset the errorMessage property in store to null
+  // Reset the errorMessage property in store to null
+  resetErrorMessage: () => {
     set({ errorMessage: null });
     localStorage.removeItem('errorMessage');
   },
@@ -64,7 +67,7 @@ const useAuthStore = create((set) => ({
 }));
 ```
 And I would adjust the Popup.js component as follows:
-```
+```javascript
   // On submission with a valid email, the user is logged in and user data can be retrieved from the store
   const handleLogin = async () => {
     resetErrorMessage();
@@ -73,7 +76,7 @@ And I would adjust the Popup.js component as follows:
     setEmail('');
   };
 
-  // If there is a user present in the store popup hides
+  // If there is a user present in the store the popup hides
   useEffect(() => {
     if (user) {
       hidePopup();
@@ -130,12 +133,15 @@ And I would adjust the Popup.js component as follows:
                       <span className="text-red-500 font-medium">
                         {errors.email.message}
                       </span>}
+                  {/* Show errorMessage from store / API response */}
                   {errorMessage && !errors.email
                     && 
                       <span className="text-red-500 font-medium">
-                        {errorMessage} {/* Show errorMessage from API / store */}
+                        {errorMessage} 
                       </span>}
-              </label> ...
+              </label>
+  ...
+  )})
 ``` 
 <img width="403" alt="Skärmavbild 2023-11-26 kl  18 33 13" src="/code/public/readme-demo.png">
 
