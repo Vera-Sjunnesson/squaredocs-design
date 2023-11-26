@@ -137,7 +137,6 @@ And I would adjust the Popup.js component as follows:
                       </span>}
               </label> ...
 ``` 
-<img width="403" alt="Skärmavbild 2023-11-26 kl  18 33 13" src="https://github.com/Vera-Sjunnesson/wudpecker-task/assets/120519835/b21a1a35-e839-4892-b74b-28007ed196e4">
 
 ## Technologies, dependencies and tools used
 
