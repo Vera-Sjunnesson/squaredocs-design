@@ -46,7 +46,7 @@ const useAuthStore = create((set) => ({
         localStorage.setItem('user', JSON.stringify(userData));
       } else {
         const errorData = await response.json(); 
-        throw new Error(errorData.error || 'Login failed'); // Get rrror message from json.response
+        throw new Error(errorData.error || 'Login failed'); // get error message from json.response
       }
     } catch (error) {
       set({ errorMessage: '* ' + error.message }); // Set the errorMessage property in store to json.response error message
