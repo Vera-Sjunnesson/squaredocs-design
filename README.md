@@ -46,11 +46,11 @@ const useAuthStore = create((set) => ({
         localStorage.setItem('user', JSON.stringify(userData));
       } else {
         const errorData = await response.json();
-        // Get error message from json.response
+        // Get response error message
         throw new Error(errorData.error || 'Login failed');
       }
     } catch (error) {
-      // Set the errorMessage property in store to json.response error message
+      // Set the errorMessage property in store to response error message
       set({ errorMessage: '* ' + error.message });
       console.error('Login error:', error);
     }
