@@ -1,4 +1,4 @@
-# wudpecker-task
+# squaredocs design
 
 ## The task
 
