@@ -2,8 +2,8 @@ import React from 'react';
 import useAuthStore from '../../stores/authStore';
 import usePopupStore from '../../stores/popupStore';
 import { SunIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import Searchbar from '../lib/Searchbar';
-import { BlueButton } from '../lib/Buttons';
+import Searchbar from './Searchbar';
+import { BlueButton } from '../ui/Buttons';
 
 //Component for header navbar
 const Navbar = () => {

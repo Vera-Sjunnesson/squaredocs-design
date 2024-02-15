@@ -1,7 +1,7 @@
 import React from 'react';
-import GuideButtons from '../lib/GuideButtons';
-import Heading from '../lib/Heading';
-import InfoBlock from '../lib/InfoBlock';
+import GuideButtons from './GuideButtons';
+import Heading from './Heading'
+import InfoBlock from './InfoBlock';
 
 // Component for the main middle section
 const MainSection = () => {

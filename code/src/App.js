@@ -1,4 +1,4 @@
-import Popup from "./components/lib/Popup";
+import Popup from "./components/sections/Popup";
 import MainSection from "./components/sections/MainSection";
 import Navbar from "./components/sections/Navbar";
 import Sidebar from "./components/sections/Sidebar";

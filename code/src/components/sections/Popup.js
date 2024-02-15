@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import useAuthStore from '../../stores/authStore';
 import { useForm } from 'react-hook-form';
 import usePopupStore from '../../stores/popupStore';
-import { BlueButton } from './Buttons';
+import { BlueButton } from '../ui/Buttons';
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
 //Popup window with a submission form to login with email (validation based on required and type) + two cancel buttons
