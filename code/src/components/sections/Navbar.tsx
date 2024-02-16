@@ -35,7 +35,7 @@ const Navbar = () => {
         <SunIcon className="h-5 w-5 text-dark-grey cursor-pointer hover:text-primary-black sm:hidden" />
         <BlueButton
           width="w-20"
-          type="button"
+          buttontype="button"
           onButtonClick={handleAction}
           text={user ? 'Log out' : "Log in"} />
       </span>

@@ -74,7 +74,7 @@ const Sidebar = () => {
               </span>
               <span className="flex flex-col items-center gap-1">
                 <p>{user.user_plan}&nbsp;member</p>
-                <p>{user.used_this_month}&nbsp;{user.used_this_month === 1 ? "call" : "calls"} this month</p>
+                <p>{user.used_this_month}&nbsp;{user.used_this_month === "1" ? "call" : "calls"} this month</p>
               </span>
             </div>
         )}

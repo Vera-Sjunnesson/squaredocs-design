@@ -1,6 +1,12 @@
 import { create } from 'zustand';
 
-const usePopupStore = create((set) => ({
+interface PopUpStore {
+  popup: boolean;
+  showPopup: () => void;
+  hidePopup: () => void;
+}
+
+const usePopupStore = create<PopUpStore>((set) => ({
   // The initial state of the store with the 'popup' property set to false
   popup: false,
   showPopup: () => {

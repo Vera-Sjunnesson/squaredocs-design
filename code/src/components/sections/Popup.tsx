@@ -6,11 +6,14 @@ import usePopupStore from '../../stores/popupStore';
 import { BlueButton } from '../ui/Buttons';
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
+interface PopupProps {
+}
+
 //Popup window with a submission form to login with email (validation based on required and type) + two cancel buttons
-const Popup = () => {
+const Popup: React.FC<PopupProps> = () => {
   const { login } = useAuthStore();
   const { popup, hidePopup } = usePopupStore(); 
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState<string>('');
   // Using React Hook Form
   const {
     register,
@@ -56,7 +59,6 @@ const Popup = () => {
                 <input
                   type="email"
                   id="email"
-                  name="email"
                   placeholder="Type your e-mail..."
                   {...register('email', { 
                     required: "* Please enter your email",
@@ -71,17 +73,17 @@ const Popup = () => {
                   {errors.email
                     && 
                     <span className="text-red-500 font-medium">
-                      {errors.email.message}
-                  </span>}
+                      {errors.email.message as string}
+                    </span>}
               </label>
               <span className="w-full flex flex flex-col items-center gap-5">
                 <BlueButton
-                  type="submit"
+                  buttontype="submit"
                   text="Log in"
                   width="w-5/6"
-                  height="h-10" />
+                  height="h-10"/>
                 <BlueButton
-                  type="button"
+                  buttontype="button"
                   text="Cancel"
                   width="w-5/6"
                   height="h-10"

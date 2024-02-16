@@ -1,3 +1,4 @@
+import React from "react";
 import Popup from "./components/sections/Popup";
 import MainSection from "./components/sections/MainSection";
 import Navbar from "./components/sections/Navbar";
